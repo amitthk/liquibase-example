@@ -1,0 +1,64 @@
+databaseChangeLog:
+
+  - include:
+      file: classpath:/db/changelog/001-changelog-1.0.sql
+
+  - changeSet:
+      id: 1
+      author: amitthakur
+      changes:
+        - sqlFile:
+            path: classpath:/db/changelog/001-create-table-user.sql
+      rollback:
+        - sqlFile:
+            path: classpath:/db/changelog/001-create-table-user-rollback.sql
+
+  - changeSet:
+      id: 2
+      author: amitthakur
+      changes:
+        - sqlFile:
+            path: classpath:/db/changelog/002-update-table-user.sql
+      rollback:
+        - sqlFile:
+            path: classpath:/db/changelog/002-update-table-user-rollback.sql
+
+  - changeSet:
+      id: 3
+      author: amitthakur
+      changes:
+        - sqlFile:
+            path: classpath:/db/changelog/003-add-age-column.sql
+      rollback:
+        - sqlFile:
+            path: classpath:/db/changelog/003-add-age-column-rollback.sql
+
+  - changeSet:
+      id: 4
+      author: amitthakur
+      changes:
+        - sqlFile:
+            path: classpath:/db/changelog/004-rename-age-column.sql
+      rollback:
+        - sqlFile:
+            path: classpath:/db/changelog/004-rename-age-column-rollback.sql
+
+  - changeSet:
+      id: 5
+      author: amitthakur
+      changes:
+        - sqlFile:
+            path: classpath:/db/changelog/005-drop-new_age-column.sql
+      rollback:
+        - sqlFile:
+            path: classpath:/db/changelog/005-drop-new_age-column-rollback.sql
+
+  - changeSet:
+      id: 6
+      author: amitthakur
+      changes:
+        - sqlFile:
+            path: classpath:/db/changelog/006-insert-into-table-user.sql
+      rollback:
+        - sqlFile:
+            path: classpath:/db/changelog/006-insert-into-table-user-rollback.sql

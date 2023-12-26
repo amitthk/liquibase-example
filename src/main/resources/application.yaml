@@ -1,0 +1,16 @@
+spring:
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+  datasource:
+    url: jdbc:h2:file:./liquibase-example.db
+    driverClassName: org.h2.Driver
+    username: sa
+    password: passwd
+  jpa.databae-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console-enabled: true
+logging:
+  level:
+    org.springframework: INFO
+    org.hibernate: INFO
